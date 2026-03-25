@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="text-white mb-4">My Dashboard</h2>
+
+<div class="row mb-4">
+
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <h3>{{ applications.count }}</h3>
+            <p>Total Applications</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <h3>{{ user.username }}</h3>
+            <p>User Profile</p>
+        </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="dashboard-card">
+            <h3>Active</h3>
+            <p>Status</p>
+        </div>
+    </div>
+
+</div>
+
+<table class="table table-light table-hover shadow">
+
+    <tr class="table-dark">
+        <th>Job</th>
+        <th>Status</th>
+    </tr>
+
+    {% for app in applications %}
+
+    <tr>
+        <td>{{ app.job.title }}</td>
+
+        <td>
+            <span class="badge 
+                {% if app.status == 'Pending' %}bg-warning
+                {% elif app.status == 'Shortlisted' %}bg-success
+                {% elif app.status == 'Rejected' %}bg-danger
+                {% endif %}
+            ">
+                {{ app.status }}
+            </span>
+        </td>
+    </tr>
+
+    {% empty %}
+    <tr>
+        <td colspan="2" class="text-center">No Applications Found</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}

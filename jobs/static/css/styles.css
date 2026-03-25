@@ -1,0 +1,79 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(120deg, #667eea, #764ba2);
+    min-height: 100vh;
+}
+
+/* Navbar */
+.navbar {
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(10px);
+}
+
+/* Job Card (UPDATED) */
+.job-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.job-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* Company Logo */
+.company-logo {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Gradient Button */
+.btn-apply {
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    border: none;
+    color: white;
+    font-weight: 600;
+    border-radius: 20px;
+}
+
+.btn-apply:hover {
+    opacity: 0.9;
+}
+
+/* Dashboard Cards */
+.dashboard-card {
+    background: white;
+    padding: 25px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    transition: 0.3s;
+}
+
+.dashboard-card:hover {
+    transform: scale(1.05);
+}
+
+/* Login UI */
+.login-box {
+    max-width: 420px;
+    margin: auto;
+    margin-top: 120px;
+    padding: 40px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Search Bar */
+.search-bar {
+    padding: 12px;
+    border-radius: 25px;
+    border: none;
+    width: 100%;
+}

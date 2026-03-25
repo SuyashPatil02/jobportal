@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2 class="text-white mb-4">Employer Dashboard</h2>
+
+<table class="table table-light">
+
+    <tr>
+        <th>Applicant</th>
+        <th>Job</th>
+        <th>Status</th>
+        <th>Resume</th>
+        <th>Action</th>
+    </tr>
+
+    {% for app in applications %}
+
+    <tr>
+        <td>{{ app.applicant.username }}</td>
+        <td>{{ app.job.title }}</td>
+
+        <td>
+            <span class="badge 
+                {% if app.status == 'Pending' %}bg-warning
+                {% elif app.status == 'Shortlisted' %}bg-success
+                {% elif app.status == 'Rejected' %}bg-danger
+                {% endif %}
+            ">
+                {{ app.status }}
+            </span>
+        </td>
+
+        <td>
+            <a href="{{ app.resume.url }}" class="btn btn-dark btn-sm">
+                Download
+            </a>
+        </td>
+
+        <td>
+            <!---Approve-->
+            <a href="{% url 'update_status' app.id 'Shortlisted' %}" class="btn btn-success btn-sm">
+                ✔ Approve
+            </a>
+           <!---Reject-->
+            <a href="{% url 'update_status' app.id 'Rejected' %}" class="btn btn-danger btn-sm">
+                ❌ Reject
+            </a>
+        </td>
+    </tr>
+
+    {% empty %}
+
+    <tr>
+        <td colspan="5" class="text-center">No Applications Yet</td>
+    </tr>
+
+    {% endfor %}
+
+</table>
+
+{% endblock %}
