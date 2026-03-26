@@ -1,4 +1,4 @@
-# 💼 Job Portal Project
+# 💼 Job Portal System Project
 
 This is a **Django-based Job Portal web application** where users can search and apply for jobs, and HR can manage applications through an employer dashboard.
 
